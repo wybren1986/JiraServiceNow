@@ -5,5 +5,8 @@
     "installed": "/installed",
     "uninstalled": "/uninstalled"
   },
+  "authentication": {
+      "type": "jwt"
+  },
   "modules": {}
 }
