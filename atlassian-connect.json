@@ -1,0 +1,66 @@
+{
+    "key": "ServiceNow-Jira-Sync",
+    "name": "ServiceNowJiraSync",
+    "description": "Synchronisation App for ServiceNow and Jira",
+    "vendor": {
+        "name": "Bossers & Cnossen",
+        "url": "http://www.bnc.nl"
+    },
+    "baseUrl": "https://dev65840.service-now.com",
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed",
+        "uninstalled": "/uninstalled"
+    },
+    "modules": {
+        "oauthConsumer": {
+            "clientId": "{{consumerKey}}"
+        },
+        "webhooks": [
+            {
+                "event": "*",
+                "url": "/webhook"
+            }
+        ],
+        "webItems": [
+            {
+                "url": "http://example.com?repoPath={repo_path}",
+                "name": {
+                    "value": "Example Web Item"
+                },
+                "location": "org.bitbucket.repository.navigation",
+                "key": "example-web-item",
+                "params": {
+                    "auiIcon": "aui-iconfont-link"
+                }
+            }
+        ],
+        "repoPages": [
+            {
+                "url": "/connect-example?repoPath={repo_path}",
+                "name": {
+                    "value": "Example Page"
+                },
+                "location": "org.bitbucket.repository.navigation",
+                "key": "example-repo-page",
+                "params": {
+                    "auiIcon": "aui-iconfont-doc"
+                }
+            }
+        ],
+        "webPanels": [
+            {
+                "url": "/connect-example?repoPath={repo_path}",
+                "name": {
+                    "value": "Example Web Panel"
+                },
+                "location": "org.bitbucket.repository.overview.informationPanel",
+                "key": "example-web-panel"
+            }
+        ]
+    },
+    "scopes": ["read", "write"],
+    "contexts": ["individual"]
+}
