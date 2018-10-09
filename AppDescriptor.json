@@ -1,12 +1,8 @@
 {
   "baseUrl": "https://dev65840.service-now.com",
-  "key": "ServiceNow-Jira-Sync",
-  "lifecycle": {
-    "installed": "/installed",
-    "uninstalled": "/uninstalled"
-  },
   "authentication": {
-      "type": "jwt"
+        "type": "jwt"
   },
+  "key": "ServiceNow-Jira-Sync",
   "modules": {}
 }
